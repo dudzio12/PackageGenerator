@@ -310,6 +310,23 @@ class GeneratorTest extends TestCase
     /**
      *
      */
+    public function testGetOptionGenerateClassMap()
+    {
+        $this->assertFalse(self::localInstance()->getOptionGenerateClassMap());
+    }
+    /**
+     *
+     */
+    public function testSetOptionGenerateClassMap()
+    {
+        $instance = self::getBingGeneratorInstance();
+        $instance->setOptionGenerateClassMap(GeneratorOptions::VALUE_TRUE);
+
+        $this->assertTrue($instance->getOptionGenerateClassMap());
+    }
+    /**
+     *
+     */
     public function testGetOptionNamespacePrefix()
     {
         $this->assertEmpty(self::localInstance()->getOptionNamespacePrefix());
@@ -642,6 +659,7 @@ class GeneratorTest extends TestCase
             ->setGatherMethods(GeneratorOptions::VALUE_START)
             ->setGenerateTutorialFile(true)
             ->setGenericConstantsName(false)
+            ->setGenerateClassMap(true)
             ->setNamespace('')
             ->setOrigin($wsdl)
             ->setPrefix('')

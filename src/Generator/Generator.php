@@ -316,6 +316,24 @@ class Generator implements \JsonSerializable
         return $this;
     }
     /**
+     * Gets the optionGenericConstantsNames value
+     * @return bool
+     */
+    public function getOptionGenerateClassMap()
+    {
+        return $this->options->getGenerateClassMap();
+    }
+    /**
+     * Sets the optionGenerateClassMap value
+     * @param bool $generateClassMap
+     * @return Generator
+     */
+    public function setOptionGenerateClassMap($generateClassMap)
+    {
+        $this->options->setGenerateClassMap($generateClassMap);
+        return $this;
+    }
+    /**
      * Gets the optionGenerateTutorialFile value
      * @return bool
      */

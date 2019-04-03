@@ -29,6 +29,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     const GATHER_METHODS = 'gather_methods';
     const GENERATE_TUTORIAL_FILE = 'generate_tutorial_file';
     const GENERIC_CONSTANTS_NAME = 'generic_constants_names';
+    const GENERATE_CLASS_MAP = 'generate_class_map';
     const NAMESPACE_PREFIX = 'namespace_prefix';
     const ORIGIN = 'origin';
     const PREFIX = 'prefix';
@@ -247,6 +248,24 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     public function setGenericConstantsName($genericConstantsName)
     {
         return $this->setOptionValue(self::GENERIC_CONSTANTS_NAME, $genericConstantsName);
+    }
+    /**
+     * Get generic constants name option value
+     * @return bool
+     */
+    public function getGenerateClassMap()
+    {
+        return $this->getOptionValue(self::GENERATE_CLASS_MAP);
+    }
+    /**
+     * Set current generic constants name option value
+     * @throws \InvalidArgumentException
+     * @param bool $genericConstantsName
+     * @return GeneratorOptions
+     */
+    public function setGenerateClassMap($generateClassMap)
+    {
+        return $this->setOptionValue(self::GENERATE_CLASS_MAP, $generateClassMap);
     }
     /**
      * Get standalone option value

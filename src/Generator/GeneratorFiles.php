@@ -90,7 +90,9 @@ class GeneratorFiles extends AbstractGeneratorAware
      */
     protected function generateClassMap()
     {
-        $this->getClassmapFile()->write();
+        if ($this->generator->getOptionGenerateClassMap() === true) {
+            $this->getClassmapFile()->write();
+        }
         return $this;
     }
     /**

@@ -294,6 +294,23 @@ class GeneratorOptionsTest extends TestCase
     /**
      *
      */
+    public function testGetGenerateClassMap()
+    {
+        $this->assertFalse(self::optionsInstance()->getGenerateClassMap());
+    }
+    /**
+     *
+     */
+    public function testSetGenerateClassMap()
+    {
+        $instance = self::optionsInstance();
+        $instance->setGenerateClassMap(GeneratorOptions::VALUE_TRUE);
+
+        $this->assertTrue($instance->getGenerateClassMap());
+    }
+    /**
+     *
+     */
     public function testGetGenerateTutorialFile()
     {
         $this->assertTrue(self::optionsInstance()->getGenerateTutorialFile());
